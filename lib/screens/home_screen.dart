@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:text_editor/widgets/bottom_bar.dart';
+import 'package:text_editor/widgets/editor.dart';
 import 'package:text_editor/widgets/menu_bar.dart';
-import 'package:text_editor/widgets/nav_bar.dart';
+import 'package:text_editor/widgets/sidebar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +16,8 @@ class HomeScreen extends StatelessWidget {
             const MenuBar(),
             Expanded(
                 child: Row(
-              children: [NavBar()],
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [SideBar(), Expanded(child: Editor())],
             )),
             BottomBar()
           ],
