@@ -1,19 +1,24 @@
+import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        NavBarItem(icon: Icons.file_copy_outlined),
-        NavBarItem(icon: Icons.search_rounded),
-        NavBarItem(icon: Icons.share),
-        NavBarItem(icon: Icons.bug_report),
-        NavBarItem(icon: Icons.apps)
-      ],
+    return Container(
+      padding: const EdgeInsets.all(5),
+      color: Colors.black,
+      child: Column(
+        children: [
+          NavBarItem(icon: FluentIcons.file_system),
+          NavBarItem(icon: FluentIcons.search),
+          NavBarItem(icon: FluentIcons.git_graph),
+          NavBarItem(icon: FluentIcons.bug),
+          NavBarItem(icon: FluentIcons.app_icon_default_add)
+        ],
+      ),
     );
   }
 }
@@ -27,9 +32,14 @@ class NavBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
+      margin: EdgeInsets.only(bottom: 10),
+      decoration: const BoxDecoration(
+        color: material.Colors.grey,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
       child: Icon(
         icon,
-        size: 30,
+        size: 25,
       ),
     );
   }
