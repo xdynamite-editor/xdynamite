@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Browser extends StatelessWidget {
   const Browser({Key? key, required this.currentNav}) : super(key: key);
@@ -7,10 +8,13 @@ class Browser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 200,
-      child: Column(
-        children: [Text(currentNav)],
+    return Container(
+      color: Colors.black87,
+      child: SizedBox(
+        width: 200,
+        child: Column(
+          children: [Text(currentNav)],
+        ),
       ),
     );
   }
