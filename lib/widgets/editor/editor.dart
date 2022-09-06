@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:text_editor/core/files/read_file.dart';
 
 class Editor extends StatelessWidget {
   Editor({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class Editor extends StatelessWidget {
     return Container(
       padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: TextField(
+        controller: TextEditingController(text: readFileSync()),
         decoration: InputDecoration(border: InputBorder.none),
         keyboardType: TextInputType.multiline,
         maxLines: null,
