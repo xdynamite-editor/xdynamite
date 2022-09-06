@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:text_editor/widgets/bottom_bar.dart';
-import 'package:text_editor/widgets/editor.dart';
+import 'package:text_editor/widgets/editor/editor.dart';
 import 'package:text_editor/widgets/menu_bar.dart';
 import 'package:text_editor/widgets/sidebar.dart';
 

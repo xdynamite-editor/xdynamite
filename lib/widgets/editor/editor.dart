@@ -5,12 +5,15 @@ class Editor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      TextField(
+    return Container(
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      child: TextField(
         decoration: InputDecoration(border: InputBorder.none),
         keyboardType: TextInputType.multiline,
         maxLines: null,
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
       ),
-    ]);
+      color: Colors.black,
+    );
   }
 }
