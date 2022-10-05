@@ -5,8 +5,11 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [Text("JavaScript")],
+    return Container(
+      color: Colors.green,
+      child: Row(
+        children: [Text("JavaScript")],
+      ),
     );
   }
 }
