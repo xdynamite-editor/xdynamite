@@ -1,6 +1,7 @@
 import 'dart:io';
 
-String readFileSync() {
-  String contents = File('./assets/user.json').readAsStringSync();
-  return contents;
+Future<Stream<FileSystemEntity>> readDirectory(String location) async {
+  // String contents = File(location).readAsStringSync();
+  var filesStream = Directory(location).list();
+  return filesStream;
 }
