@@ -1,5 +1,6 @@
-import 'package:fluent_ui/fluent_ui.dart';
+import 'package:fluent_ui/fluent_ui.dart' hide Colors;
 import 'package:flutter/material.dart' hide ThemeData;
+import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/ui/layouts/primary_layout.dart';
 
 void main() {
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FluentApp(
       title: 'Z-CODE',
-      theme: ThemeData(),
+      theme: ThemeData(scaffoldBackgroundColor: Colors.black),
       home: Scaffold(
+        backgroundColor: clr1,
         body: PrimaryLauout(),
       ),
     );

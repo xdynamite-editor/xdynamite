@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:text_editor/app/constants/colors.dart';
 
 class CustomIconButton extends StatefulWidget {
-  const CustomIconButton({Key? key}) : super(key: key);
+  IconData icon;
+  CustomIconButton({Key? key, required this.icon}) : super(key: key);
 
   @override
   State<CustomIconButton> createState() => _CustomIconButtonState();
@@ -28,15 +30,15 @@ class _CustomIconButtonState extends State<CustomIconButton> {
           onTap: () {},
           child: AnimatedContainer(
               decoration: BoxDecoration(
-                color: isHovered ? Colors.red : Colors.blue,
+                color: isHovered ? clr1 : clr2,
                 borderRadius: BorderRadius.all(Radius.circular(5)),
               ),
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,
               child: Padding(
-                padding: EdgeInsets.all(3),
+                padding: EdgeInsets.all(2),
                 child: Icon(
-                  Icons.menu,
+                  widget.icon,
                   size: 22,
                 ),
               ))),
