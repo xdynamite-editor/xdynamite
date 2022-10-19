@@ -4,7 +4,20 @@ import 'package:text_editor/app/constants/colors.dart';
 
 class CustomIconButton extends StatefulWidget {
   IconData icon;
-  CustomIconButton({Key? key, required this.icon}) : super(key: key);
+  Color bgColor;
+  Color hoverColor;
+  double size;
+  double padding;
+  double borderRadius;
+  CustomIconButton(
+      {Key? key,
+      required this.icon,
+      this.bgColor = clr1,
+      this.hoverColor = clr2,
+      this.size = 22,
+      this.padding = 2,
+      this.borderRadius = 5})
+      : super(key: key);
 
   @override
   State<CustomIconButton> createState() => _CustomIconButtonState();
@@ -30,16 +43,17 @@ class _CustomIconButtonState extends State<CustomIconButton> {
           onTap: () {},
           child: AnimatedContainer(
               decoration: BoxDecoration(
-                color: isHovered ? clr1 : clr2,
-                borderRadius: BorderRadius.all(Radius.circular(5)),
+                color: isHovered ? widget.hoverColor : widget.bgColor,
+                borderRadius:
+                    BorderRadius.all(Radius.circular(widget.borderRadius)),
               ),
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,
               child: Padding(
-                padding: EdgeInsets.all(2),
+                padding: EdgeInsets.all(widget.padding),
                 child: Icon(
                   widget.icon,
-                  size: 22,
+                  size: widget.size,
                 ),
               ))),
     );

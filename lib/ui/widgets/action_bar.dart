@@ -22,17 +22,33 @@ class ActionBar extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
-              CustomIconButton(icon: Icons.menu),
+              CustomIconButton(
+                icon: Icons.menu,
+                bgColor: clr2,
+                hoverColor: clr1,
+              ),
               SizedBox(
                 width: 10,
               ),
-              CustomIconButton(icon: Icons.undo),
-              CustomIconButton(icon: Icons.redo)
+              CustomIconButton(
+                icon: Icons.undo,
+                bgColor: clr2,
+                hoverColor: clr1,
+              ),
+              CustomIconButton(
+                icon: Icons.redo,
+                bgColor: clr2,
+                hoverColor: clr1,
+              )
             ],
           ),
           Row(
             children: [
-              CustomIconButton(icon: Icons.play_arrow),
+              CustomIconButton(
+                icon: Icons.play_arrow,
+                bgColor: clr2,
+                hoverColor: clr1,
+              ),
               SizedBox(
                 width: 10,
               )

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:text_editor/ui/widgets/action_bar.dart';
+import 'package:text_editor/ui/side_panel/side_panel.dart';
 
 class PrimaryLauout extends StatelessWidget {
   const PrimaryLauout({Key? key}) : super(key: key);
@@ -10,7 +8,13 @@ class PrimaryLauout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [ActionBar()],
+      children: [
+        ActionBar(),
+        Expanded(
+            child: Row(
+          children: [SidePanel()],
+        ))
+      ],
     );
   }
 }
