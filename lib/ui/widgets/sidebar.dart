@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:text_editor/widgets/browser.dart';
-import 'package:text_editor/widgets/nav_bar.dart';
+import 'package:text_editor/ui/widgets/browser.dart';
+import 'package:text_editor/ui/widgets/nav_bar.dart';
 
 class SideBar extends StatelessWidget {
   SideBar({Key? key}) : super(key: key);
