@@ -226,6 +226,7 @@ abstract class OpenFile implements FilesEvent {
 mixin _$FilesState {
   List<Map<String, String>> get openedFiles =>
       throw _privateConstructorUsedError;
+  Map<String, String>? get currentFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FilesStateCopyWith<FilesState> get copyWith =>
@@ -238,7 +239,9 @@ abstract class $FilesStateCopyWith<$Res> {
           FilesState value, $Res Function(FilesState) then) =
       _$FilesStateCopyWithImpl<$Res, FilesState>;
   @useResult
-  $Res call({List<Map<String, String>> openedFiles});
+  $Res call(
+      {List<Map<String, String>> openedFiles,
+      Map<String, String>? currentFile});
 }
 
 /// @nodoc
@@ -255,12 +258,17 @@ class _$FilesStateCopyWithImpl<$Res, $Val extends FilesState>
   @override
   $Res call({
     Object? openedFiles = null,
+    Object? currentFile = freezed,
   }) {
     return _then(_value.copyWith(
       openedFiles: null == openedFiles
           ? _value.openedFiles
           : openedFiles // ignore: cast_nullable_to_non_nullable
               as List<Map<String, String>>,
+      currentFile: freezed == currentFile
+          ? _value.currentFile
+          : currentFile // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ) as $Val);
   }
 }
@@ -273,7 +281,9 @@ abstract class _$$_FilesStateCopyWith<$Res>
       __$$_FilesStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Map<String, String>> openedFiles});
+  $Res call(
+      {List<Map<String, String>> openedFiles,
+      Map<String, String>? currentFile});
 }
 
 /// @nodoc
@@ -288,12 +298,17 @@ class __$$_FilesStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? openedFiles = null,
+    Object? currentFile = freezed,
   }) {
     return _then(_$_FilesState(
       openedFiles: null == openedFiles
           ? _value._openedFiles
           : openedFiles // ignore: cast_nullable_to_non_nullable
               as List<Map<String, String>>,
+      currentFile: freezed == currentFile
+          ? _value._currentFile
+          : currentFile // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ));
   }
 }
@@ -301,8 +316,11 @@ class __$$_FilesStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_FilesState implements _FilesState {
-  const _$_FilesState({required final List<Map<String, String>> openedFiles})
-      : _openedFiles = openedFiles;
+  const _$_FilesState(
+      {required final List<Map<String, String>> openedFiles,
+      final Map<String, String>? currentFile})
+      : _openedFiles = openedFiles,
+        _currentFile = currentFile;
 
   final List<Map<String, String>> _openedFiles;
   @override
@@ -311,9 +329,18 @@ class _$_FilesState implements _FilesState {
     return EqualUnmodifiableListView(_openedFiles);
   }
 
+  final Map<String, String>? _currentFile;
+  @override
+  Map<String, String>? get currentFile {
+    final value = _currentFile;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'FilesState(openedFiles: $openedFiles)';
+    return 'FilesState(openedFiles: $openedFiles, currentFile: $currentFile)';
   }
 
   @override
@@ -322,12 +349,16 @@ class _$_FilesState implements _FilesState {
         (other.runtimeType == runtimeType &&
             other is _$_FilesState &&
             const DeepCollectionEquality()
-                .equals(other._openedFiles, _openedFiles));
+                .equals(other._openedFiles, _openedFiles) &&
+            const DeepCollectionEquality()
+                .equals(other._currentFile, _currentFile));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_openedFiles));
+      runtimeType,
+      const DeepCollectionEquality().hash(_openedFiles),
+      const DeepCollectionEquality().hash(_currentFile));
 
   @JsonKey(ignore: true)
   @override
@@ -338,10 +369,13 @@ class _$_FilesState implements _FilesState {
 
 abstract class _FilesState implements FilesState {
   const factory _FilesState(
-      {required final List<Map<String, String>> openedFiles}) = _$_FilesState;
+      {required final List<Map<String, String>> openedFiles,
+      final Map<String, String>? currentFile}) = _$_FilesState;
 
   @override
   List<Map<String, String>> get openedFiles;
+  @override
+  Map<String, String>? get currentFile;
   @override
   @JsonKey(ignore: true)
   _$$_FilesStateCopyWith<_$_FilesState> get copyWith =>

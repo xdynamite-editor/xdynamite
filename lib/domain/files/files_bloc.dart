@@ -9,7 +9,8 @@ class FilesBloc extends Bloc<FilesEvent, FilesState> {
   FilesBloc() : super(FilesState.initial()) {
     on<OpenFile>((event, emit) {
       var newList = [...state.openedFiles, event.fileInfo];
-      return emit(state.copyWith(openedFiles: newList));
+      return emit(
+          state.copyWith(openedFiles: newList, currentFile: event.fileInfo));
     });
   }
 }
