@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/ui/widgets/custom_icon_button.dart';
+import 'package:text_editor/ui/widgets/spacer_x.dart';
 
 class ActionBar extends StatelessWidget {
   const ActionBar({Key? key}) : super(key: key);
@@ -37,6 +38,18 @@ class ActionBar extends StatelessWidget {
               ),
               CustomIconButton(
                 icon: Icons.redo,
+                bgColor: clr2,
+                hoverColor: clr1,
+              ),
+              SpacerX(20),
+              CustomIconButton(
+                icon: Icons.note_add_outlined,
+                bgColor: clr2,
+                hoverColor: clr1,
+              ),
+              SpacerX(5),
+              CustomIconButton(
+                icon: Icons.create_new_folder_outlined,
                 bgColor: clr2,
                 hoverColor: clr1,
               )

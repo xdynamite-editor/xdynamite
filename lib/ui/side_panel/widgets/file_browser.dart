@@ -91,21 +91,21 @@ class TopBar extends StatelessWidget {
             "my-portfolio".toUpperCase(),
             style: TextStyle(fontWeight: FontWeight.w900),
           ),
-          Row(
-            children: [
-              CustomIconButton(
-                icon: Icons.note_add_outlined,
-                size: 18,
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              CustomIconButton(
-                icon: Icons.create_new_folder_outlined,
-                size: 18,
-              )
-            ],
-          )
+          // Row(
+          //   children: [
+          //     CustomIconButton(
+          //       icon: Icons.note_add_outlined,
+          //       size: 18,
+          //     ),
+          //     SizedBox(
+          //       width: 5,
+          //     ),
+          //     CustomIconButton(
+          //       icon: Icons.create_new_folder_outlined,
+          //       size: 18,
+          //     )
+          //   ],
+          // )
         ],
       ),
     );

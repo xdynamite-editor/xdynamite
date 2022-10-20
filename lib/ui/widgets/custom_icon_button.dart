@@ -13,7 +13,7 @@ class CustomIconButton extends StatefulWidget {
   CustomIconButton(
       {Key? key,
       required this.icon,
-      this.iconColor = Colors.black,
+      this.iconColor = Colors.blueGrey,
       this.bgColor = clr1,
       this.hoverColor = clr2,
       this.size = 22,
