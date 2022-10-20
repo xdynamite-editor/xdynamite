@@ -13,4 +13,10 @@ const clr8 = Color.fromARGB(255, 151, 99, 1);
 
 const clrWhite = Colors.white;
 
-const fontClr1 = Colors.black;
+const fontClr1 = Color.fromRGBO(105, 100, 125, 1);
+
+const lightColor1 = Color.fromRGBO(248, 248, 248, 1);
+const lightColor2 = Color.fromRGBO(240, 240, 240, 1);
+const lightColor3 = Color.fromRGBO(232, 232, 232, 1);
+const lightColor4 = Color.fromRGBO(216, 216, 216, 1);
+const lightColor5 = Color.fromRGBO(176, 176, 176, 1);

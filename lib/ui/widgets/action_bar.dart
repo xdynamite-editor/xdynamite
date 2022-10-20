@@ -14,7 +14,7 @@ class ActionBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(3.0),
-      color: clr2,
+      color: lightColor3,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -25,33 +25,33 @@ class ActionBar extends StatelessWidget {
               ),
               CustomIconButton(
                 icon: Icons.menu,
-                bgColor: clr2,
-                hoverColor: clr1,
+                bgColor: lightColor3,
+                hoverColor: lightColor4,
               ),
               SizedBox(
                 width: 10,
               ),
               CustomIconButton(
                 icon: Icons.undo,
-                bgColor: clr2,
-                hoverColor: clr1,
+                bgColor: lightColor3,
+                hoverColor: lightColor4,
               ),
               CustomIconButton(
                 icon: Icons.redo,
-                bgColor: clr2,
-                hoverColor: clr1,
+                bgColor: lightColor3,
+                hoverColor: lightColor4,
               ),
               SpacerX(20),
               CustomIconButton(
                 icon: Icons.note_add_outlined,
-                bgColor: clr2,
-                hoverColor: clr1,
+                bgColor: lightColor3,
+                hoverColor: lightColor4,
               ),
               SpacerX(5),
               CustomIconButton(
                 icon: Icons.create_new_folder_outlined,
-                bgColor: clr2,
-                hoverColor: clr1,
+                bgColor: lightColor3,
+                hoverColor: lightColor4,
               )
             ],
           ),
@@ -59,8 +59,8 @@ class ActionBar extends StatelessWidget {
             children: [
               CustomIconButton(
                 icon: Icons.play_arrow,
-                bgColor: clr2,
-                hoverColor: clr1,
+                bgColor: lightColor3,
+                hoverColor: lightColor4,
               ),
               SizedBox(
                 width: 10,

@@ -24,7 +24,7 @@ class _FileBrowserState extends State<FileBrowser> {
     if (!opened) {
       return Container(
           width: 200,
-          color: clr3,
+          color: lightColor4,
           padding: EdgeInsets.all(20),
           child: Column(children: [
             TextField(
