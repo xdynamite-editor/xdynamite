@@ -11,9 +11,9 @@ class SidePanelMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomIconButton(
       icon: icon,
-      iconColor: lightColor1,
-      bgColor: lightColor5,
-      hoverColor: lightColor4,
+      iconColor: clrWhite,
+      bgColor: lightColor6,
+      hoverColor: primaryAccentColor,
       size: 30,
       padding: 5,
       borderRadius: 5,
