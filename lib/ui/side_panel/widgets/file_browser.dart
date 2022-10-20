@@ -2,7 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/core/files/read_file.dart';
-import 'package:text_editor/domain/files/open_files.dart';
+import 'package:text_editor/domain/filesa/open_files.dart';
 import 'package:text_editor/ui/side_panel/widgets/file_widget.dart';
 
 class FileBrowser extends StatefulWidget {
