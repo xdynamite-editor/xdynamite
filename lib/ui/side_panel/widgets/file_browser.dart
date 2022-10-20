@@ -29,7 +29,7 @@ class _FileBrowserState extends State<FileBrowser> {
             TextField(
               controller: fileLocationController,
             ),
-            Button(
+            ElevatedButton(
               child: Text("Open folder"),
               onPressed: () async {
                 fileLocation = fileLocationController.value.text;

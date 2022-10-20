@@ -1,5 +1,7 @@
+import 'dart:io';
+
 import 'package:fluent_ui/fluent_ui.dart' hide Colors;
-import 'package:flutter/material.dart' hide ThemeData;
+import 'package:flutter/material.dart' as Material;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/ui/layouts/primary_layout.dart';
@@ -13,15 +15,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FluentApp(
-      title: 'Z-CODE',
-      theme: ThemeData(
-        fontFamily: "Poppins",
-      ),
-      home: Scaffold(
-        backgroundColor: clr1,
-        body: PrimaryLauout(),
-      ),
-    );
+    if (Platform.isWindows) {
+      return FluentApp(
+          title: 'Z-CODE',
+          theme: ThemeData(fontFamily: "Poppins"),
+          home: PrimaryLauout());
+    } else if (Platform.isLinux) {
+      return Material.MaterialApp(
+        title: 'Z-CODE',
+        theme: Material.ThemeData(
+          fontFamily: "Poppins",
+        ),
+        home: Material.Scaffold(
+          backgroundColor: clr1,
+          body: PrimaryLauout(),
+        ),
+      );
+    } else {
+      return Material.MaterialApp(
+        title: 'Z-CODE',
+        theme: Material.ThemeData(
+          fontFamily: "Poppins",
+        ),
+        home: Material.Scaffold(
+          backgroundColor: clr1,
+          body: PrimaryLauout(),
+        ),
+      );
+    }
   }
 }

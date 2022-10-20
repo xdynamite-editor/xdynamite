@@ -20,7 +20,7 @@ class Tab extends StatelessWidget {
         children: [
           Text(
             filename,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 12),
           ),
           SizedBox(
             width: 5,

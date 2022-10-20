@@ -80,6 +80,10 @@ flutter:
       fonts:
         # - asset: fonts/poppins-500.ttf
         - asset: fonts/poppins-medium.ttf
+    - family: Roboto
+      fonts:
+        # - asset: fonts/poppins-500.ttf
+        - asset: fonts/roboto-mono.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
