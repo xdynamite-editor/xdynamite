@@ -9,7 +9,7 @@ class Editor extends StatelessWidget {
     return Container(
       padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: TextField(
-        controller: TextEditingController(text: readFileSync()),
+        controller: TextEditingController(text: "ABC"),
         decoration: InputDecoration(border: InputBorder.none),
         keyboardType: TextInputType.multiline,
         maxLines: null,
