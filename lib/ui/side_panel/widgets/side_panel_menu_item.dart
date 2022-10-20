@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/ui/widgets/custom_icon_button.dart';
@@ -10,11 +11,12 @@ class SidePanelMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomIconButton(
       icon: icon,
+      iconColor: clrWhite,
       bgColor: clr4,
-      hoverColor: clr3,
-      size: 40,
-      padding: 10,
-      borderRadius: 10,
+      hoverColor: clr5,
+      size: 30,
+      padding: 5,
+      borderRadius: 5,
     );
   }
 }

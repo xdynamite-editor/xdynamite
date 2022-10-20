@@ -4,6 +4,7 @@ import 'package:text_editor/app/constants/colors.dart';
 
 class CustomIconButton extends StatefulWidget {
   IconData icon;
+  Color iconColor;
   Color bgColor;
   Color hoverColor;
   double size;
@@ -12,6 +13,7 @@ class CustomIconButton extends StatefulWidget {
   CustomIconButton(
       {Key? key,
       required this.icon,
+      this.iconColor = Colors.black,
       this.bgColor = clr1,
       this.hoverColor = clr2,
       this.size = 22,
@@ -54,6 +56,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
                 child: Icon(
                   widget.icon,
                   size: widget.size,
+                  color: widget.iconColor,
                 ),
               ))),
     );

@@ -9,5 +9,8 @@ const clr4 = Color.fromARGB(255, 143, 120, 104);
 const clr5 = Color.fromARGB(255, 129, 102, 82);
 const clr6 = Color.fromRGBO(125, 110, 131, 1);
 const clr7 = Color.fromARGB(255, 90, 79, 94);
+const clr8 = Color.fromARGB(255, 151, 99, 1);
+
+const clrWhite = Colors.white;
 
 const fontClr1 = Colors.black;
