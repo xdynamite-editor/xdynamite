@@ -11,28 +11,25 @@ class TextEditor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-          padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
-          child: BlocBuilder<FilesBloc, FilesState>(
-            builder: (ctx, state) {
-              if (state.currentFile != null) {
-                return TextField(
-                  controller: TextEditingController(
-                      text: readFileFromDisk(
-                          state.currentFile!["path"] as String)),
-                  decoration: InputDecoration(border: InputBorder.none),
-                  keyboardType: TextInputType.multiline,
-                  maxLines: null,
-                  style:
-                      TextStyle(color: fontClr1, fontWeight: FontWeight.w500),
-                );
-              }
+      child: BlocBuilder<FilesBloc, FilesState>(
+        builder: (ctx, state) {
+          if (state.currentFile != null) {
+            return TextField(
+              controller: TextEditingController(
+                  text: readFileFromDisk(state.currentFile!["path"] as String)),
+              decoration: InputDecoration(
+                  border: InputBorder.none, contentPadding: EdgeInsets.all(2)),
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
+              style: TextStyle(color: fontClr1, fontWeight: FontWeight.w500),
+            );
+          }
 
-              return Center(
-                child: Text('No file Selected'),
-              );
-            },
-          )),
+          return Center(
+            child: Text('No file Selected'),
+          );
+        },
+      ),
     );
   }
 }
