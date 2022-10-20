@@ -1,7 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:text_editor/ui/widgets/bottom_bar.dart';
-import 'package:text_editor/ui/widgets/editor/editor.dart';
+import 'package:text_editor/ui/editor/editor.dart';
 import 'package:text_editor/ui/widgets/menu_bar.dart';
 import 'package:text_editor/ui/widgets/sidebar.dart';
 

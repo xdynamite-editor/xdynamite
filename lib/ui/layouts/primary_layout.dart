@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/ui/bottom_panel/bottom_panel.dart';
+import 'package:text_editor/ui/editor/editor.dart';
 import 'package:text_editor/ui/widgets/action_bar.dart';
 import 'package:text_editor/ui/side_panel/side_panel.dart';
 
@@ -31,9 +32,8 @@ class MainUI extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-              child: Container(
-            color: clr1,
-          )),
+            child: Editor(),
+          ),
           BottomPanel()
         ],
       ),
