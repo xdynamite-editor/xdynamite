@@ -42,14 +42,17 @@ class _FileWidgetState extends State<FileWidget> {
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,
               child: Padding(
-                  padding: EdgeInsets.all(3),
+                  padding: EdgeInsets.fromLTRB(3, 0, 3, 0),
                   child: Container(
                     child: Row(children: [
-                      Icon(Icons.arrow_right),
+                      Icon(Icons.chevron_right),
                       SizedBox(
-                        width: 10,
+                        width: 3,
                       ),
-                      Text(widget.name)
+                      Text(
+                        widget.name,
+                        style: TextStyle(fontSize: 13),
+                      )
                     ]),
                   )))),
     );
