@@ -34,7 +34,7 @@ class MainUI extends StatelessWidget {
           Expanded(
             child: Editor(),
           ),
-          BottomPanel()
+          // BottomPanel()
         ],
       ),
     );
