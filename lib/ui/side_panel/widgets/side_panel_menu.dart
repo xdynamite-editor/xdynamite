@@ -9,7 +9,7 @@ class SidePanelMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.all(5),
       color: clr4,
       child: Column(
         children: [
