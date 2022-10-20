@@ -10,7 +10,7 @@ class Tabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: clr3,
+        color: lightColor2,
         child: BlocBuilder<FilesBloc, FilesState>(
           builder: (ctx, state) {
             return Row(

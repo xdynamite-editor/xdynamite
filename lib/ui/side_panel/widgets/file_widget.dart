@@ -36,7 +36,7 @@ class _FileWidgetState extends State<FileWidget> {
           },
           child: AnimatedContainer(
               decoration: BoxDecoration(
-                color: isHovered ? lightColor5 : lightColor4,
+                color: isHovered ? lightColor4 : lightColor3,
                 borderRadius: BorderRadius.all(Radius.circular(3)),
               ),
               duration: const Duration(milliseconds: 300),

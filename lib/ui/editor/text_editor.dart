@@ -20,6 +20,7 @@ class TextEditor extends StatelessWidget {
               decoration: InputDecoration(
                   border: InputBorder.none, contentPadding: EdgeInsets.all(5)),
               keyboardType: TextInputType.multiline,
+              cursorColor: primaryAccentColor,
               maxLines: null,
               style: TextStyle(
                   color: fontClr1,
