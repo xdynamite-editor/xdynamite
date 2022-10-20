@@ -25,33 +25,37 @@ class ActionBar extends StatelessWidget {
               ),
               CustomIconButton(
                 icon: Icons.menu,
-                bgColor: lightColor3,
-                hoverColor: lightColor4,
+                bgColor: lightColor4,
+                hoverColor: lightColor6,
+                enableBorder: true,
               ),
-              SizedBox(
-                width: 10,
-              ),
+              SpacerX(30),
               CustomIconButton(
                 icon: Icons.undo,
-                bgColor: lightColor3,
-                hoverColor: lightColor4,
+                bgColor: lightColor4,
+                hoverColor: lightColor6,
+                enableBorder: true,
               ),
+              SpacerX(5),
               CustomIconButton(
                 icon: Icons.redo,
-                bgColor: lightColor3,
-                hoverColor: lightColor4,
+                bgColor: lightColor4,
+                hoverColor: lightColor6,
+                enableBorder: true,
               ),
-              SpacerX(20),
+              SpacerX(30),
               CustomIconButton(
                 icon: Icons.note_add_outlined,
-                bgColor: lightColor3,
-                hoverColor: lightColor4,
+                bgColor: lightColor4,
+                hoverColor: lightColor6,
+                enableBorder: true,
               ),
               SpacerX(5),
               CustomIconButton(
                 icon: Icons.create_new_folder_outlined,
-                bgColor: lightColor3,
-                hoverColor: lightColor4,
+                bgColor: lightColor4,
+                hoverColor: lightColor6,
+                enableBorder: true,
               )
             ],
           ),
@@ -59,8 +63,9 @@ class ActionBar extends StatelessWidget {
             children: [
               CustomIconButton(
                 icon: Icons.play_arrow,
-                bgColor: lightColor3,
-                hoverColor: lightColor4,
+                bgColor: lightColor4,
+                hoverColor: lightColor6,
+                enableBorder: true,
               ),
               SizedBox(
                 width: 10,

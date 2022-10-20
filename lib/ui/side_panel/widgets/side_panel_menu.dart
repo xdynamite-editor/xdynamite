@@ -11,7 +11,7 @@ class SidePanelMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-      color: lightColor6,
+      color: lightColor7,
       child: Column(
         children: [
           SidePanelMenuItem(icon: Icons.file_copy_outlined),

@@ -23,8 +23,7 @@ class _FileBrowserState extends State<FileBrowser> {
   Widget build(BuildContext context) {
     if (!opened) {
       return Container(
-          width: 200,
-          color: lightColor4,
+          width: 250,
           padding: EdgeInsets.all(20),
           child: Column(children: [
             TextField(
@@ -57,8 +56,7 @@ class _FileBrowserState extends State<FileBrowser> {
     }
 
     return Container(
-      width: 200,
-      decoration: BoxDecoration(color: clr3),
+      width: 250,
       child: Column(
         children: [
           TopBar(),
@@ -82,14 +80,15 @@ class TopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      color: lightColor5,
       padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "my-portfolio".toUpperCase(),
-            style: TextStyle(fontWeight: FontWeight.w900),
+            style: TextStyle(fontWeight: FontWeight.w900, color: fontClr1),
           ),
           // Row(
           //   children: [

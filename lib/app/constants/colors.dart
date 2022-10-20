@@ -18,7 +18,8 @@ const lightColor1 = Color.fromRGBO(248, 248, 248, 1);
 const lightColor2 = Color.fromRGBO(240, 240, 240, 1);
 const lightColor3 = Color.fromRGBO(232, 232, 232, 1);
 const lightColor4 = Color.fromRGBO(216, 216, 216, 1);
-const lightColor5 = Color.fromRGBO(152, 152, 152, 1);
-const lightColor6 = Color.fromRGBO(80, 80, 80, 1);
+const lightColor5 = Color.fromRGBO(208, 208, 208, 1);
+const lightColor6 = Color.fromRGBO(200, 200, 200, 1);
+const lightColor7 = Color.fromRGBO(80, 80, 80, 1);
 
 const primaryAccentColor = colorTeal;

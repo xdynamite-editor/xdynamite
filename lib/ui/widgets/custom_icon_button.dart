@@ -9,6 +9,7 @@ class CustomIconButton extends StatefulWidget {
   Color hoverColor;
   double size;
   double padding;
+  bool enableBorder;
   double borderRadius;
   CustomIconButton(
       {Key? key,
@@ -18,6 +19,7 @@ class CustomIconButton extends StatefulWidget {
       this.hoverColor = clr2,
       this.size = 22,
       this.padding = 2,
+      this.enableBorder = false,
       this.borderRadius = 5})
       : super(key: key);
 
@@ -45,10 +47,14 @@ class _CustomIconButtonState extends State<CustomIconButton> {
           onTap: () {},
           child: AnimatedContainer(
               decoration: BoxDecoration(
-                color: isHovered ? widget.hoverColor : widget.bgColor,
-                borderRadius:
-                    BorderRadius.all(Radius.circular(widget.borderRadius)),
-              ),
+                  color: isHovered ? widget.hoverColor : widget.bgColor,
+                  borderRadius:
+                      BorderRadius.all(Radius.circular(widget.borderRadius)),
+                  border: widget.enableBorder
+                      ? Border.all(
+                          width: 2,
+                          color: isHovered ? lightColor6 : lightColor4)
+                      : null),
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,
               child: Padding(
