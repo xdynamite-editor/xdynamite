@@ -8,7 +8,8 @@ part 'files_bloc.freezed.dart';
 class FilesBloc extends Bloc<FilesEvent, FilesState> {
   FilesBloc() : super(FilesState.initial()) {
     on<OpenFile>((event, emit) {
-      // TODO: implement event handler
+      var newList = [...state.openedFiles, event.fileInfo];
+      return emit(state.copyWith(openedFiles: newList));
     });
   }
 }

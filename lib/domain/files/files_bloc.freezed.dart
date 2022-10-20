@@ -16,19 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$FilesEvent {
+  Map<String, String> get fileInfo => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() openFile,
+    required TResult Function(Map<String, String> fileInfo) openFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? openFile,
+    TResult? Function(Map<String, String> fileInfo)? openFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? openFile,
+    TResult Function(Map<String, String> fileInfo)? openFile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +49,10 @@ mixin _$FilesEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $FilesEventCopyWith<FilesEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +60,8 @@ abstract class $FilesEventCopyWith<$Res> {
   factory $FilesEventCopyWith(
           FilesEvent value, $Res Function(FilesEvent) then) =
       _$FilesEventCopyWithImpl<$Res, FilesEvent>;
+  @useResult
+  $Res call({Map<String, String> fileInfo});
 }
 
 /// @nodoc
@@ -66,13 +73,29 @@ class _$FilesEventCopyWithImpl<$Res, $Val extends FilesEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fileInfo = null,
+  }) {
+    return _then(_value.copyWith(
+      fileInfo: null == fileInfo
+          ? _value.fileInfo
+          : fileInfo // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$OpenFileCopyWith<$Res> {
+abstract class _$$OpenFileCopyWith<$Res> implements $FilesEventCopyWith<$Res> {
   factory _$$OpenFileCopyWith(
           _$OpenFile value, $Res Function(_$OpenFile) then) =
       __$$OpenFileCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Map<String, String> fileInfo});
 }
 
 /// @nodoc
@@ -81,51 +104,80 @@ class __$$OpenFileCopyWithImpl<$Res>
     implements _$$OpenFileCopyWith<$Res> {
   __$$OpenFileCopyWithImpl(_$OpenFile _value, $Res Function(_$OpenFile) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fileInfo = null,
+  }) {
+    return _then(_$OpenFile(
+      null == fileInfo
+          ? _value._fileInfo
+          : fileInfo // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$OpenFile implements OpenFile {
-  const _$OpenFile();
+  _$OpenFile(final Map<String, String> fileInfo) : _fileInfo = fileInfo;
+
+  final Map<String, String> _fileInfo;
+  @override
+  Map<String, String> get fileInfo {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_fileInfo);
+  }
 
   @override
   String toString() {
-    return 'FilesEvent.openFile()';
+    return 'FilesEvent.openFile(fileInfo: $fileInfo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OpenFile);
+        (other.runtimeType == runtimeType &&
+            other is _$OpenFile &&
+            const DeepCollectionEquality().equals(other._fileInfo, _fileInfo));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_fileInfo));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OpenFileCopyWith<_$OpenFile> get copyWith =>
+      __$$OpenFileCopyWithImpl<_$OpenFile>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() openFile,
+    required TResult Function(Map<String, String> fileInfo) openFile,
   }) {
-    return openFile();
+    return openFile(fileInfo);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? openFile,
+    TResult? Function(Map<String, String> fileInfo)? openFile,
   }) {
-    return openFile?.call();
+    return openFile?.call(fileInfo);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? openFile,
+    TResult Function(Map<String, String> fileInfo)? openFile,
     required TResult orElse(),
   }) {
     if (openFile != null) {
-      return openFile();
+      return openFile(fileInfo);
     }
     return orElse();
   }
@@ -160,7 +212,14 @@ class _$OpenFile implements OpenFile {
 }
 
 abstract class OpenFile implements FilesEvent {
-  const factory OpenFile() = _$OpenFile;
+  factory OpenFile(final Map<String, String> fileInfo) = _$OpenFile;
+
+  @override
+  Map<String, String> get fileInfo;
+  @override
+  @JsonKey(ignore: true)
+  _$$OpenFileCopyWith<_$OpenFile> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

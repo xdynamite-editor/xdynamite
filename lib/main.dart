@@ -2,8 +2,10 @@ import 'dart:io';
 
 import 'package:fluent_ui/fluent_ui.dart' hide Colors;
 import 'package:flutter/material.dart' as Material;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_editor/app/constants/colors.dart';
+import 'package:text_editor/domain/files/files_bloc.dart';
 import 'package:text_editor/ui/layouts/primary_layout.dart';
 
 void main() {
@@ -15,13 +17,38 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isWindows) {
-      return FluentApp(
-          title: 'Z-CODE',
-          theme: ThemeData(fontFamily: "Poppins"),
-          home: PrimaryLauout());
-    } else if (Platform.isLinux) {
-      return Material.MaterialApp(
+    // if (Platform.isWindows) {
+    //   return FluentApp(
+    //       title: 'Z-CODE',
+    //       theme: ThemeData(fontFamily: "Poppins"),
+    //       home: PrimaryLauout());
+    // } else if (Platform.isLinux) {
+    //   return Material.MaterialApp(
+    //     title: 'Z-CODE',
+    //     theme: Material.ThemeData(
+    //       fontFamily: "Poppins",
+    //     ),
+    //     home: Material.Scaffold(
+    //       backgroundColor: clr1,
+    //       body: PrimaryLauout(),
+    //     ),
+    //   );
+    // } else {
+    //   return Material.MaterialApp(
+    //     title: 'Z-CODE',
+    //     theme: Material.ThemeData(
+    //       fontFamily: "Poppins",
+    //     ),
+    //     home: Material.Scaffold(
+    //       backgroundColor: clr1,
+    //       body: PrimaryLauout(),
+    //     ),
+    //   );
+    // }
+
+    return BlocProvider(
+      create: (context) => FilesBloc(),
+      child: Material.MaterialApp(
         title: 'Z-CODE',
         theme: Material.ThemeData(
           fontFamily: "Poppins",
@@ -30,18 +57,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: clr1,
           body: PrimaryLauout(),
         ),
-      );
-    } else {
-      return Material.MaterialApp(
-        title: 'Z-CODE',
-        theme: Material.ThemeData(
-          fontFamily: "Poppins",
-        ),
-        home: Material.Scaffold(
-          backgroundColor: clr1,
-          body: PrimaryLauout(),
-        ),
-      );
-    }
+      ),
+    );
   }
 }

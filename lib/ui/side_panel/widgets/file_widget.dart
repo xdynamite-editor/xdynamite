@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:text_editor/app/constants/colors.dart';
+import 'package:text_editor/domain/files/files_bloc.dart';
+import 'package:provider/provider.dart';
 
 class FileWidget extends StatefulWidget {
   String name;
@@ -27,7 +29,11 @@ class _FileWidgetState extends State<FileWidget> {
         });
       },
       child: InkWell(
-          onTap: () {},
+          onTap: () {
+            context
+                .read<FilesBloc>()
+                .add(OpenFile({"name": widget.name, "path": widget.path}));
+          },
           child: AnimatedContainer(
               decoration: BoxDecoration(
                 color: isHovered ? clr2 : clr3,

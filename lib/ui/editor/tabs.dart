@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:text_editor/app/constants/colors.dart';
+import 'package:text_editor/domain/files/files_bloc.dart';
 import 'package:text_editor/ui/editor/tab.dart';
 
 class Tabs extends StatelessWidget {
@@ -8,41 +10,16 @@ class Tabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: clr3,
-      child: Row(
-        children: [
-          SizedBox(
-            width: 3,
-          ),
-          Tab(
-            filename: "hello.tsx",
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Tab(
-            filename: "app.ts",
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Tab(
-            filename: "main.ts",
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Tab(
-            filename: "header.tsx",
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Tab(
-            filename: "footer.tsx",
-          ),
-        ],
-      ),
-    );
+        color: clr3,
+        child: BlocBuilder<FilesBloc, FilesState>(
+          builder: (ctx, state) {
+            return Row(
+                children: state.openedFiles
+                    .map(
+                      (e) => Tab(filename: e["name"] as String),
+                    )
+                    .toList());
+          },
+        ));
   }
 }
