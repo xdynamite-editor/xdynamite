@@ -88,6 +88,9 @@ flutter:
       fonts:
         # - asset: fonts/poppins-500.ttf
         - asset: fonts/roboto-mono.ttf
+    - family: Ubuntu-Mono
+      fonts:
+        - asset: fonts/ubuntu-mono-regular.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

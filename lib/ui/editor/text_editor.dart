@@ -18,10 +18,13 @@ class TextEditor extends StatelessWidget {
               controller: TextEditingController(
                   text: readFileFromDisk(state.currentFile!["path"] as String)),
               decoration: InputDecoration(
-                  border: InputBorder.none, contentPadding: EdgeInsets.all(2)),
+                  border: InputBorder.none, contentPadding: EdgeInsets.all(5)),
               keyboardType: TextInputType.multiline,
               maxLines: null,
-              style: TextStyle(color: fontClr1, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  color: fontClr1,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "Ubuntu-Mono"),
             );
           }
 
