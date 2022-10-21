@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:text_editor/app/constants/colors.dart';
 
 class CustomIconButton extends StatefulWidget {
   IconData icon;
+  void Function()? onTap;
+  bool isActive;
   Color iconColor;
   Color bgColor;
   Color hoverColor;
@@ -14,6 +16,8 @@ class CustomIconButton extends StatefulWidget {
   CustomIconButton(
       {Key? key,
       required this.icon,
+      this.onTap,
+      this.isActive = false,
       this.iconColor = fontClr1,
       this.bgColor = clr1,
       this.hoverColor = clr2,
@@ -44,16 +48,20 @@ class _CustomIconButtonState extends State<CustomIconButton> {
         });
       },
       child: InkWell(
-          onTap: () {},
+          onTap: widget.onTap,
           child: AnimatedContainer(
               decoration: BoxDecoration(
-                  color: isHovered ? widget.hoverColor : widget.bgColor,
+                  color: isHovered || widget.isActive
+                      ? widget.hoverColor
+                      : widget.bgColor,
                   borderRadius:
                       BorderRadius.all(Radius.circular(widget.borderRadius)),
                   border: widget.enableBorder
                       ? Border.all(
                           width: 2,
-                          color: isHovered ? lightColor6 : lightColor4)
+                          color: isHovered || widget.isActive
+                              ? lightColor6
+                              : lightColor4)
                       : null),
               duration: const Duration(milliseconds: 300),
               curve: Curves.fastOutSlowIn,

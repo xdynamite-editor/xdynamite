@@ -14,11 +14,14 @@ class SidePanelMenu extends StatelessWidget {
       color: lightColor6,
       child: Column(
         children: [
-          SidePanelMenuItem(icon: Icons.file_copy_outlined),
+          SidePanelMenuItem(
+            icon: Icons.file_copy_outlined,
+            id: 1,
+          ),
           SpacerY(5),
-          SidePanelMenuItem(icon: Icons.search_outlined),
+          SidePanelMenuItem(icon: Icons.search_outlined, id: 2),
           SpacerY(5),
-          SidePanelMenuItem(icon: Icons.settings_outlined),
+          SidePanelMenuItem(icon: Icons.settings_outlined, id: 3),
         ],
       ),
     );
