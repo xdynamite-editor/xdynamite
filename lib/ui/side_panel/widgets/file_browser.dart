@@ -81,14 +81,15 @@ class TopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: lightColor5,
+      color: lightColor6,
       padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             "my-portfolio".toUpperCase(),
-            style: TextStyle(fontWeight: FontWeight.w900, color: fontClr1),
+            style: TextStyle(
+                fontWeight: FontWeight.w900, color: fontClr1, fontSize: 12),
           ),
           // Row(
           //   children: [

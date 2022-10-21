@@ -24,41 +24,82 @@ class ActionBar extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SpacerX(6),
+                  SpacerX(8),
                   CustomIconButton(
                     icon: Icons.menu,
                     bgColor: lightColor4,
                     hoverColor: lightColor6,
                     enableBorder: true,
+                    size: 18,
                   ),
-                  SpacerX(30),
+                  SpacerX(10),
+                  Container(
+                    width: 2,
+                    height: 30,
+                    color: lightColor4,
+                  ),
+                  SpacerX(10),
                   CustomIconButton(
                     icon: Icons.undo,
                     bgColor: lightColor4,
                     hoverColor: lightColor6,
                     enableBorder: true,
+                    size: 18,
                   ),
-                  SpacerX(5),
+                  SpacerX(10),
                   CustomIconButton(
                     icon: Icons.redo,
                     bgColor: lightColor4,
                     hoverColor: lightColor6,
                     enableBorder: true,
+                    size: 18,
                   ),
-                  SpacerX(30),
+                  SpacerX(10),
+                  CustomIconButton(
+                    icon: Icons.cut_outlined,
+                    bgColor: lightColor4,
+                    hoverColor: lightColor6,
+                    enableBorder: true,
+                    size: 18,
+                  ),
+                  SpacerX(10),
+                  CustomIconButton(
+                    icon: Icons.copy_outlined,
+                    bgColor: lightColor4,
+                    hoverColor: lightColor6,
+                    enableBorder: true,
+                    size: 18,
+                  ),
+                  SpacerX(10),
+                  CustomIconButton(
+                    icon: Icons.paste_outlined,
+                    bgColor: lightColor4,
+                    hoverColor: lightColor6,
+                    enableBorder: true,
+                    size: 18,
+                  ),
+                  SpacerX(10),
+                  Container(
+                    width: 2,
+                    height: 30,
+                    color: lightColor4,
+                  ),
+                  SpacerX(10),
                   CustomIconButton(
                     icon: Icons.note_add_outlined,
                     bgColor: lightColor4,
                     hoverColor: lightColor6,
                     enableBorder: true,
+                    size: 18,
                   ),
-                  SpacerX(5),
+                  SpacerX(10),
                   CustomIconButton(
                     icon: Icons.create_new_folder_outlined,
                     bgColor: lightColor4,
                     hoverColor: lightColor6,
                     enableBorder: true,
-                  )
+                    size: 18,
+                  ),
                 ],
               ),
               Row(
@@ -68,10 +109,9 @@ class ActionBar extends StatelessWidget {
                     bgColor: lightColor4,
                     hoverColor: lightColor6,
                     enableBorder: true,
+                    size: 18,
                   ),
-                  SizedBox(
-                    width: 10,
-                  )
+                  SpacerX(10)
                 ],
               )
             ],
