@@ -16,12 +16,12 @@ class SidePanelMenu extends StatelessWidget {
         children: [
           SidePanelMenuItem(
             icon: Icons.file_copy_outlined,
-            id: 1,
+            id: 0,
           ),
           SpacerY(5),
-          SidePanelMenuItem(icon: Icons.search_outlined, id: 2),
+          SidePanelMenuItem(icon: Icons.search_outlined, id: 1),
           SpacerY(5),
-          SidePanelMenuItem(icon: Icons.settings_outlined, id: 3),
+          SidePanelMenuItem(icon: Icons.settings_outlined, id: 2),
         ],
       ),
     );
