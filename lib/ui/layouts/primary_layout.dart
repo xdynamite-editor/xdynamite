@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:text_editor/domain/bloc/action_bar_bloc.dart';
+import 'package:text_editor/ui/widgets/app_menu.dart';
 import 'package:text_editor/ui/editor/editor.dart';
 import 'package:text_editor/ui/status_bar/status_bar.dart';
 import 'package:text_editor/ui/action_bar/action_bar.dart';
@@ -9,14 +12,24 @@ class PrimaryLauout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        ActionBar(),
-        Expanded(
-            child: Row(
-          children: [SidePanel(), MainUI()],
-        )),
-        StatusBar()
+        Column(
+          children: [
+            ActionBar(),
+            Expanded(
+                child: Row(
+              children: [SidePanel(), MainUI()],
+            )),
+            StatusBar()
+          ],
+        ),
+        BlocBuilder<ActionBarBloc, ActionBarState>(builder: (ctx, state) {
+          return Container(
+              child: state.isAppMenuOpen
+                  ? Positioned(top: 40, left: 12, child: AppMenu())
+                  : null);
+        })
       ],
     );
   }

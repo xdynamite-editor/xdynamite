@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:text_editor/app/constants/colors.dart';
+import 'package:text_editor/domain/bloc/action_bar_bloc.dart';
 import 'package:text_editor/ui/action_bar/widgets/command_text_input.dart';
 import 'package:text_editor/ui/widgets/custom_icon_button.dart';
 import 'package:text_editor/ui/widgets/spacer_x.dart';
+import 'package:provider/provider.dart';
 
 class ActionBar extends StatelessWidget {
   const ActionBar({Key? key}) : super(key: key);
+
+  void Function() _onMenuIconTap(BuildContext ctx, bool isAppMenuOpen) {
+    return () {
+      ctx.read<ActionBarBloc>().add(SetAppMenu(!isAppMenuOpen));
+    };
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +30,18 @@ class ActionBar extends StatelessWidget {
               Row(
                 children: [
                   SpacerX(8),
-                  CustomIconButton(
-                    icon: Icons.menu,
-                    bgColor: lightColor4,
-                    hoverColor: lightColor6,
-                    enableBorder: true,
-                    size: 18,
+                  BlocBuilder<ActionBarBloc, ActionBarState>(
+                    builder: (ctx, state) {
+                      return CustomIconButton(
+                        icon: Icons.menu,
+                        onTap: _onMenuIconTap(context, state.isAppMenuOpen),
+                        isActive: state.isAppMenuOpen,
+                        bgColor: lightColor4,
+                        hoverColor: lightColor6,
+                        enableBorder: true,
+                        size: 18,
+                      );
+                    },
                   ),
                   SpacerX(10),
                   Container(
@@ -119,7 +130,7 @@ class ActionBar extends StatelessWidget {
         ),
         Positioned(
           child: CommandTextInput(),
-        )
+        ),
       ],
     );
   }
