@@ -14,12 +14,15 @@ class FilesBloc extends Bloc<FilesEvent, FilesState> {
               element["path"] == event.fileInfo["path"]));
 
       if (isOpened) {
-        return emit(state.copyWith(
-            openedFiles: state.openedFiles, currentFile: event.fileInfo));
+        return emit(state.copyWith(currentFile: event.fileInfo));
       }
       var newList = [...state.openedFiles, event.fileInfo];
       return emit(
           state.copyWith(openedFiles: newList, currentFile: event.fileInfo));
+    });
+
+    on<SelectOpenedFile>((event, emit) {
+      return emit(state.copyWith(currentFile: event.fileInfo));
     });
   }
 }

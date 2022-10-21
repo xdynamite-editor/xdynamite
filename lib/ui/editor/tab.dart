@@ -6,39 +6,47 @@ import 'package:text_editor/ui/widgets/custom_icon_button.dart';
 import 'package:text_editor/ui/widgets/spacer_x.dart';
 
 class Tab extends StatelessWidget {
-  String filename;
-  Tab({Key? key, required this.filename}) : super(key: key);
+  String name;
+  String path;
+  Tab({Key? key, required this.name, required this.path}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FilesBloc, FilesState>(
       builder: (ctx, state) {
-        return Container(
-          padding: EdgeInsets.all(5),
-          color: (state.currentFile != null &&
-                  state.currentFile!["name"] == filename)
-              ? lightColor1
-              : lightColor3,
-          child: Row(
-            children: [
-              Text(
-                filename,
-                style: TextStyle(fontSize: 12),
-              ),
-              SpacerX(5),
-              CustomIconButton(
-                icon: Icons.close,
-                bgColor: (state.currentFile != null &&
-                        state.currentFile!["name"] == filename)
-                    ? lightColor1
-                    : lightColor3,
-                hoverColor: (state.currentFile != null &&
-                        state.currentFile!["name"] == filename)
-                    ? lightColor2
-                    : lightColor4,
-                size: 15,
-              )
-            ],
+        return GestureDetector(
+          onTap: () {
+            context
+                .read<FilesBloc>()
+                .add(SelectOpenedFile({"name": name, "path": path}));
+          },
+          child: Container(
+            padding: EdgeInsets.all(5),
+            color: (state.currentFile != null &&
+                    state.currentFile!["name"] == name)
+                ? lightColor1
+                : lightColor3,
+            child: Row(
+              children: [
+                Text(
+                  name,
+                  style: TextStyle(fontSize: 12),
+                ),
+                SpacerX(5),
+                CustomIconButton(
+                  icon: Icons.close,
+                  bgColor: (state.currentFile != null &&
+                          state.currentFile!["name"] == name)
+                      ? lightColor1
+                      : lightColor3,
+                  hoverColor: (state.currentFile != null &&
+                          state.currentFile!["name"] == name)
+                      ? lightColor2
+                      : lightColor4,
+                  size: 15,
+                )
+              ],
+            ),
           ),
         );
       },

@@ -20,32 +20,38 @@ mixin _$FilesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Map<String, String> fileInfo) openFile,
+    required TResult Function(Map<String, String> fileInfo) selectOpenedFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Map<String, String> fileInfo)? openFile,
+    TResult? Function(Map<String, String> fileInfo)? selectOpenedFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Map<String, String> fileInfo)? openFile,
+    TResult Function(Map<String, String> fileInfo)? selectOpenedFile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OpenFile value) openFile,
+    required TResult Function(SelectOpenedFile value) selectOpenedFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OpenFile value)? openFile,
+    TResult? Function(SelectOpenedFile value)? selectOpenedFile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenFile value)? openFile,
+    TResult Function(SelectOpenedFile value)? selectOpenedFile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +164,7 @@ class _$OpenFile implements OpenFile {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Map<String, String> fileInfo) openFile,
+    required TResult Function(Map<String, String> fileInfo) selectOpenedFile,
   }) {
     return openFile(fileInfo);
   }
@@ -166,6 +173,7 @@ class _$OpenFile implements OpenFile {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Map<String, String> fileInfo)? openFile,
+    TResult? Function(Map<String, String> fileInfo)? selectOpenedFile,
   }) {
     return openFile?.call(fileInfo);
   }
@@ -174,6 +182,7 @@ class _$OpenFile implements OpenFile {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Map<String, String> fileInfo)? openFile,
+    TResult Function(Map<String, String> fileInfo)? selectOpenedFile,
     required TResult orElse(),
   }) {
     if (openFile != null) {
@@ -186,6 +195,7 @@ class _$OpenFile implements OpenFile {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OpenFile value) openFile,
+    required TResult Function(SelectOpenedFile value) selectOpenedFile,
   }) {
     return openFile(this);
   }
@@ -194,6 +204,7 @@ class _$OpenFile implements OpenFile {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OpenFile value)? openFile,
+    TResult? Function(SelectOpenedFile value)? selectOpenedFile,
   }) {
     return openFile?.call(this);
   }
@@ -202,6 +213,7 @@ class _$OpenFile implements OpenFile {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OpenFile value)? openFile,
+    TResult Function(SelectOpenedFile value)? selectOpenedFile,
     required TResult orElse(),
   }) {
     if (openFile != null) {
@@ -219,6 +231,149 @@ abstract class OpenFile implements FilesEvent {
   @override
   @JsonKey(ignore: true)
   _$$OpenFileCopyWith<_$OpenFile> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectOpenedFileCopyWith<$Res>
+    implements $FilesEventCopyWith<$Res> {
+  factory _$$SelectOpenedFileCopyWith(
+          _$SelectOpenedFile value, $Res Function(_$SelectOpenedFile) then) =
+      __$$SelectOpenedFileCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Map<String, String> fileInfo});
+}
+
+/// @nodoc
+class __$$SelectOpenedFileCopyWithImpl<$Res>
+    extends _$FilesEventCopyWithImpl<$Res, _$SelectOpenedFile>
+    implements _$$SelectOpenedFileCopyWith<$Res> {
+  __$$SelectOpenedFileCopyWithImpl(
+      _$SelectOpenedFile _value, $Res Function(_$SelectOpenedFile) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fileInfo = null,
+  }) {
+    return _then(_$SelectOpenedFile(
+      null == fileInfo
+          ? _value._fileInfo
+          : fileInfo // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectOpenedFile implements SelectOpenedFile {
+  _$SelectOpenedFile(final Map<String, String> fileInfo) : _fileInfo = fileInfo;
+
+  final Map<String, String> _fileInfo;
+  @override
+  Map<String, String> get fileInfo {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_fileInfo);
+  }
+
+  @override
+  String toString() {
+    return 'FilesEvent.selectOpenedFile(fileInfo: $fileInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectOpenedFile &&
+            const DeepCollectionEquality().equals(other._fileInfo, _fileInfo));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_fileInfo));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectOpenedFileCopyWith<_$SelectOpenedFile> get copyWith =>
+      __$$SelectOpenedFileCopyWithImpl<_$SelectOpenedFile>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Map<String, String> fileInfo) openFile,
+    required TResult Function(Map<String, String> fileInfo) selectOpenedFile,
+  }) {
+    return selectOpenedFile(fileInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Map<String, String> fileInfo)? openFile,
+    TResult? Function(Map<String, String> fileInfo)? selectOpenedFile,
+  }) {
+    return selectOpenedFile?.call(fileInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Map<String, String> fileInfo)? openFile,
+    TResult Function(Map<String, String> fileInfo)? selectOpenedFile,
+    required TResult orElse(),
+  }) {
+    if (selectOpenedFile != null) {
+      return selectOpenedFile(fileInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenFile value) openFile,
+    required TResult Function(SelectOpenedFile value) selectOpenedFile,
+  }) {
+    return selectOpenedFile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OpenFile value)? openFile,
+    TResult? Function(SelectOpenedFile value)? selectOpenedFile,
+  }) {
+    return selectOpenedFile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenFile value)? openFile,
+    TResult Function(SelectOpenedFile value)? selectOpenedFile,
+    required TResult orElse(),
+  }) {
+    if (selectOpenedFile != null) {
+      return selectOpenedFile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SelectOpenedFile implements FilesEvent {
+  factory SelectOpenedFile(final Map<String, String> fileInfo) =
+      _$SelectOpenedFile;
+
+  @override
+  Map<String, String> get fileInfo;
+  @override
+  @JsonKey(ignore: true)
+  _$$SelectOpenedFileCopyWith<_$SelectOpenedFile> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

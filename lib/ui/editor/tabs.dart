@@ -16,7 +16,10 @@ class Tabs extends StatelessWidget {
             return Row(
                 children: state.openedFiles
                     .map(
-                      (e) => Tab(filename: e["name"] as String),
+                      (e) => Tab(
+                        name: e["name"] as String,
+                        path: e["path"] as String,
+                      ),
                     )
                     .toList());
           },
