@@ -11,7 +11,7 @@ class ActivePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: lightColor3,
+      color: lightColor5,
       child: FileBrowser(),
     );
   }

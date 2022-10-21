@@ -24,9 +24,7 @@ class ActionBar extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SizedBox(
-                    width: 10,
-                  ),
+                  SpacerX(6),
                   CustomIconButton(
                     icon: Icons.menu,
                     bgColor: lightColor4,
