@@ -11,6 +11,7 @@ const clr8 = Color.fromARGB(255, 151, 99, 1);
 
 const clrWhite = Colors.white;
 const colorTeal = Color.fromRGBO(11, 124, 107, 1);
+const colorTealMuted = Color.fromARGB(190, 11, 124, 107);
 
 const fontClr1 = Color.fromRGBO(105, 100, 125, 1);
 
@@ -23,3 +24,4 @@ const lightColor6 = Color.fromRGBO(200, 200, 200, 1);
 const lightColor7 = Color.fromRGBO(80, 80, 80, 1);
 
 const primaryAccentColor = colorTeal;
+const primaryAccentColorMuted = colorTealMuted;

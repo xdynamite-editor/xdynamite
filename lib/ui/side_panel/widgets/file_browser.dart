@@ -1,11 +1,13 @@
-import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/core/files/read_file.dart';
 import 'package:text_editor/domain/files/files_io.dart';
 import 'package:text_editor/domain/filesa/open_files.dart';
+import 'package:text_editor/ui/controls/custom_animated_text_button.dart';
+import 'package:text_editor/ui/controls/custom_text_button.dart';
 import 'package:text_editor/ui/side_panel/widgets/file_widget.dart';
 import 'package:text_editor/ui/widgets/custom_icon_button.dart';
+import 'package:text_editor/ui/widgets/spacer_y.dart';
 
 class FileBrowser extends StatefulWidget {
   const FileBrowser({Key? key}) : super(key: key);
@@ -16,8 +18,6 @@ class FileBrowser extends StatefulWidget {
 
 class _FileBrowserState extends State<FileBrowser> {
   bool opened = false;
-  String fileLocation = "";
-  TextEditingController fileLocationController = TextEditingController();
 
   List<Map<String, String>> files = [];
   @override
@@ -25,14 +25,16 @@ class _FileBrowserState extends State<FileBrowser> {
     if (!opened) {
       return Container(
           width: 250,
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
           child: Column(children: [
-            TextField(
-              controller: fileLocationController,
+            Text(
+              "Open project folder to start editing. Or you can clone a git repository.",
+              style: TextStyle(fontSize: 12, color: fontClr1),
             ),
-            ElevatedButton(
-              child: Text("Open folder"),
-              onPressed: () async {
+            SpacerY(15),
+            CustomAnimatedTextButton(
+              text: "Open Folder",
+              onTap: () async {
                 var directoryPath = await pickFolder();
 
                 if (directoryPath == null) {
@@ -56,6 +58,21 @@ class _FileBrowserState extends State<FileBrowser> {
                   opened = true;
                 });
               },
+              textColor: lightColor1,
+              hoverTextColor: lightColor1,
+              bgColor: primaryAccentColorMuted,
+              hoverBgColor: primaryAccentColor,
+              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            ),
+            SpacerY(15),
+            CustomAnimatedTextButton(
+              text: "Clone Repository",
+              onTap: () {},
+              textColor: lightColor1,
+              hoverTextColor: lightColor1,
+              bgColor: primaryAccentColorMuted,
+              hoverBgColor: primaryAccentColor,
+              padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
             )
           ]));
     }
