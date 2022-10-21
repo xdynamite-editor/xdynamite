@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:text_editor/ui/editor/editor.dart';
 import 'package:text_editor/ui/status_bar/status_bar.dart';
-import 'package:text_editor/ui/widgets/action_bar.dart';
+import 'package:text_editor/ui/action_bar/action_bar.dart';
 import 'package:text_editor/ui/side_panel/side_panel.dart';
 
 class PrimaryLauout extends StatelessWidget {
