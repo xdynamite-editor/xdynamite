@@ -2,6 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/core/files/read_file.dart';
+import 'package:text_editor/domain/files/files_io.dart';
 import 'package:text_editor/domain/filesa/open_files.dart';
 import 'package:text_editor/ui/side_panel/widgets/file_widget.dart';
 import 'package:text_editor/ui/widgets/custom_icon_button.dart';
@@ -32,9 +33,13 @@ class _FileBrowserState extends State<FileBrowser> {
             ElevatedButton(
               child: Text("Open folder"),
               onPressed: () async {
-                fileLocation = fileLocationController.value.text;
-                var contents =
-                    await readDirectory("/home/bazil/Desktop/my-portfolio");
+                var directoryPath = await pickFolder();
+
+                if (directoryPath == null) {
+                  return;
+                }
+
+                var contents = await readDirectory(directoryPath);
                 await for (final value in contents) {
                   String filename = value.uri.pathSegments.last;
                   if (value.runtimeType.toString() == "_Directory") {
