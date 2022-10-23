@@ -18,12 +18,12 @@ import 'package:flutter/services.dart';
 class JsonRpcMessage {
   final int id;
   final String method;
-  final Map<String, String> params;
+  final Map<String, dynamic> params;
 
   const JsonRpcMessage(
       {required this.id, required this.method, required this.params});
 
-  String toJson() {
-    return jsonEncode(this);
+  Map toJson() {
+    return {"jsonrpc": "2.0", "id": id, "method": method, "params": params};
   }
 }
