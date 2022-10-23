@@ -4,10 +4,16 @@ import 'package:text_editor/app/constants/colors.dart';
 import 'package:text_editor/core/files/read_file.dart';
 import 'package:text_editor/domain/files/files_bloc.dart';
 import 'package:text_editor/domain/files/files_io.dart';
+import 'package:text_editor/domain/lsp/cpp.lsp.dart';
 
-class TextEditor extends StatelessWidget {
+class TextEditor extends StatefulWidget {
   TextEditor({Key? key}) : super(key: key);
 
+  @override
+  State<TextEditor> createState() => _TextEditorState();
+}
+
+class _TextEditorState extends State<TextEditor> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -22,6 +28,9 @@ class TextEditor extends StatelessWidget {
               keyboardType: TextInputType.multiline,
               cursorColor: primaryAccentColor,
               maxLines: null,
+              onChanged: (v) {
+                var newText = CppLSP.getInfo(v);
+              },
               style: TextStyle(
                   color: fontClr1,
                   fontWeight: FontWeight.w500,
