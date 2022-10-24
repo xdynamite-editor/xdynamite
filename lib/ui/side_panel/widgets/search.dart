@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 import 'package:text_editor/app/constants/colors.dart';
+import 'package:text_editor/domain/extension_manager/ext_manager.dart';
 import 'package:text_editor/domain/json_rpc/json_rpc_message.dart';
 import 'package:text_editor/infra/lsp/clients/clang_client/clang_client.dart';
 import 'package:text_editor/infra/lsp/clients/language_server_client.dart';
@@ -37,9 +38,12 @@ class _SearchState extends State<Search> {
   late ClangLSPClient client;
 
   void startLanguageClient() {
-    setState(() {
-      client = ClangLSPClient(1, "Z-Code");
-    });
+    // setState(() {
+    //   client = ClangLSPClient(1, "Z-Code");
+    // });
+
+    final mgr = ExtensionManager();
+    mgr.startExtensions();
   }
 
   void sendInitMessage() {
