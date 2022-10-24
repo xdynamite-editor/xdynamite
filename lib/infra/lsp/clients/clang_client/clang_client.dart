@@ -23,6 +23,20 @@ class ClangLSPClient implements LanguageServerClient {
     stderr.addStream(process.stderr);
 
     _lspProcess = process;
+
+    var message = const JsonRpcMessage(id: 1, method: "initialize", params: {
+      "initializationOptions": {},
+      "rootUri": "file:////home/bazil/Desktop/algo-ds/",
+      "capabilities": {},
+      "rootPath": "/home/bazil/Desktop/algo-ds/",
+      "processId": 12345
+    });
+
+    sendMessage(message);
+
+    await for (var val in _lspProcess.stdout) {
+      print(String.fromCharCodes(val));
+    }
   }
 
   @override
@@ -32,9 +46,5 @@ class ClangLSPClient implements LanguageServerClient {
 
     _lspProcess.stdin.write(header);
     _lspProcess.stdin.write(jsonString);
-
-    await for (var val in _lspProcess.stdout) {
-      print(String.fromCharCodes(val));
-    }
   }
 }

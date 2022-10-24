@@ -43,12 +43,19 @@ class _SearchState extends State<Search> {
   }
 
   void sendInitMessage() {
-    var message = new JsonRpcMessage(id: 1, method: "initialize", params: {
-      "initializationOptions": {},
-      "rootUri": "file:////home/bazil/Desktop/algo-ds/",
-      "capabilities": {},
-      "rootPath": "/home/bazil/Desktop/algo-ds/",
-      "processId": 12345
+    var program = '''#include <iostream>
+
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}''';
+
+    var message =
+        new JsonRpcMessage(id: 2, method: "textDocument/didChange", params: {
+      "uri": "file:///home/bazil/Desktop/algo-ds/stack.cpp",
+      "languageId": 1,
+      "version": 2,
+      "text": program
     });
 
     client.sendMessage(message);
