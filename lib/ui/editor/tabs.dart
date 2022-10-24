@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/domain/files/files_bloc.dart';
-import 'package:text_editor/ui/editor/tab.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/domain/files/files_bloc.dart';
+import 'package:xdynamite/ui/editor/tab.dart';
 
 class Tabs extends StatelessWidget {
   const Tabs({Key? key}) : super(key: key);

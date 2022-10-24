@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/domain/side_panel/side_panel_bloc.dart';
-import 'package:text_editor/ui/widgets/custom_icon_button.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/domain/side_panel/side_panel_bloc.dart';
+import 'package:xdynamite/ui/widgets/custom_icon_button.dart';
 
 class SidePanelMenuItem extends StatelessWidget {
   int id;

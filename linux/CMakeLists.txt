@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "text_editor")
-set(APPLICATION_ID "com.example.text_editor")
+set(BINARY_NAME "xdynamite")
+set(APPLICATION_ID "com.example.xdynamite")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -2,13 +2,13 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/domain/extension_manager/ext_manager.dart';
-import 'package:text_editor/domain/json_rpc/json_rpc_message.dart';
-import 'package:text_editor/infra/lsp/clients/clang_client/clang_client.dart';
-import 'package:text_editor/infra/lsp/clients/language_server_client.dart';
-import 'package:text_editor/ui/controls/custom_text_button.dart';
-import 'package:text_editor/ui/widgets/spacer_y.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/domain/extension_manager/ext_manager.dart';
+import 'package:xdynamite/domain/json_rpc/json_rpc_message.dart';
+import 'package:xdynamite/infra/lsp/clients/clang_client/clang_client.dart';
+import 'package:xdynamite/infra/lsp/clients/language_server_client.dart';
+import 'package:xdynamite/ui/controls/custom_text_button.dart';
+import 'package:xdynamite/ui/widgets/spacer_y.dart';
 
 late ClangLSPClient client;
 

@@ -2,8 +2,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/ui/widgets/spacer_y.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/ui/widgets/spacer_y.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);

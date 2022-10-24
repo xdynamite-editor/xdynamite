@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:text_editor/app/utils/std-io.dart';
-import 'package:text_editor/domain/json_rpc/json_rpc_message.dart';
-import 'package:text_editor/domain/lsp/lsp_client.dart';
+import 'package:xdynamite/app/utils/std-io.dart';
+import 'package:xdynamite/domain/json_rpc/json_rpc_message.dart';
+import 'package:xdynamite/domain/lsp/lsp_client.dart';
 
 class ClangLSPClient implements LanguageServerClient {
   final int _clientId;

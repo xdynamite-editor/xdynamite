@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/domain/files/files_bloc.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/domain/files/files_bloc.dart';
 import 'package:provider/provider.dart';
 
 class FileWidget extends StatefulWidget {

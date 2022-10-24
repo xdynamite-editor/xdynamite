@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'dart:ffi';
 import 'dart:io';
 
-import 'package:text_editor/app/utils/std-io.dart';
-import 'package:text_editor/domain/json_rpc/json_rpc_message.dart';
+import 'package:xdynamite/app/utils/std-io.dart';
+import 'package:xdynamite/domain/json_rpc/json_rpc_message.dart';
 
 class LanguageServerClient {
   final int _clientId;

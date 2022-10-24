@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/core/files/read_file.dart';
-import 'package:text_editor/domain/files/files_io.dart';
-import 'package:text_editor/domain/filesa/open_files.dart';
-import 'package:text_editor/ui/controls/custom_animated_text_button.dart';
-import 'package:text_editor/ui/controls/custom_text_button.dart';
-import 'package:text_editor/ui/side_panel/widgets/file_widget.dart';
-import 'package:text_editor/ui/widgets/custom_icon_button.dart';
-import 'package:text_editor/ui/widgets/spacer_y.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/core/files/read_file.dart';
+import 'package:xdynamite/domain/files/files_io.dart';
+import 'package:xdynamite/domain/filesa/open_files.dart';
+import 'package:xdynamite/ui/controls/custom_animated_text_button.dart';
+import 'package:xdynamite/ui/controls/custom_text_button.dart';
+import 'package:xdynamite/ui/side_panel/widgets/file_widget.dart';
+import 'package:xdynamite/ui/widgets/custom_icon_button.dart';
+import 'package:xdynamite/ui/widgets/spacer_y.dart';
 
 class FileBrowser extends StatefulWidget {
   const FileBrowser({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 {
-    "name": "text_editor",
-    "short_name": "text_editor",
+    "name": "xdynamite",
+    "short_name": "xdynamite",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:text_editor/ui/side_panel/widgets/active_panel.dart';
-import 'package:text_editor/ui/side_panel/widgets/side_panel_menu.dart';
+import 'package:xdynamite/ui/side_panel/widgets/active_panel.dart';
+import 'package:xdynamite/ui/side_panel/widgets/side_panel_menu.dart';
 
 class SidePanel extends StatefulWidget {
   SidePanel({Key? key}) : super(key: key);

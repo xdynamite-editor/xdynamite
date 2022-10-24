@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:text_editor/domain/bloc/action_bar_bloc.dart';
-import 'package:text_editor/ui/widgets/app_menu.dart';
-import 'package:text_editor/ui/editor/editor.dart';
-import 'package:text_editor/ui/status_bar/status_bar.dart';
-import 'package:text_editor/ui/action_bar/action_bar.dart';
-import 'package:text_editor/ui/side_panel/side_panel.dart';
+import 'package:xdynamite/domain/bloc/action_bar_bloc.dart';
+import 'package:xdynamite/ui/widgets/app_menu.dart';
+import 'package:xdynamite/ui/editor/editor.dart';
+import 'package:xdynamite/ui/status_bar/status_bar.dart';
+import 'package:xdynamite/ui/action_bar/action_bar.dart';
+import 'package:xdynamite/ui/side_panel/side_panel.dart';
 
 class PrimaryLauout extends StatelessWidget {
   const PrimaryLauout({Key? key}) : super(key: key);

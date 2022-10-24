@@ -2,11 +2,11 @@ import 'package:fluent_ui/fluent_ui.dart' hide Colors;
 import 'package:flutter/material.dart' as Material;
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/domain/bloc/action_bar_bloc.dart';
-import 'package:text_editor/domain/files/files_bloc.dart';
-import 'package:text_editor/domain/side_panel/side_panel_bloc.dart';
-import 'package:text_editor/ui/layouts/primary_layout.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/domain/bloc/action_bar_bloc.dart';
+import 'package:xdynamite/domain/files/files_bloc.dart';
+import 'package:xdynamite/domain/side_panel/side_panel_bloc.dart';
+import 'package:xdynamite/ui/layouts/primary_layout.dart';
 
 void main() {
   runApp(const MyApp());

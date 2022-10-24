@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:text_editor/app/constants/colors.dart';
-import 'package:text_editor/ui/side_panel/widgets/side_panel_menu_item.dart';
-import 'package:text_editor/ui/widgets/spacer_y.dart';
+import 'package:xdynamite/app/constants/colors.dart';
+import 'package:xdynamite/ui/side_panel/widgets/side_panel_menu_item.dart';
+import 'package:xdynamite/ui/widgets/spacer_y.dart';
 
 class SidePanelMenu extends StatelessWidget {
   const SidePanelMenu({Key? key}) : super(key: key);

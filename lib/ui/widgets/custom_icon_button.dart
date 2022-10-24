@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:text_editor/app/constants/colors.dart';
+import 'package:xdynamite/app/constants/colors.dart';
 
 class CustomIconButton extends StatefulWidget {
   IconData icon;

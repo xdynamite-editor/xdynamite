@@ -1,4 +1,4 @@
-# text_editor
+# xdynamite
 
 A new Flutter project.
 

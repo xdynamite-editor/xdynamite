@@ -1,4 +1,4 @@
-package com.example.flutter_text_editor
+package com.example.xdynamite
 
 import io.flutter.embedding.android.FlutterActivity
 
