@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:xdynamite/app/constants/colors.dart';
-import 'package:xdynamite/core/files/read_file.dart';
 import 'package:xdynamite/domain/files/files_bloc.dart';
 import 'package:xdynamite/domain/files/files_io.dart';
 import 'package:xdynamite/domain/lsp/cpp.lsp.dart';

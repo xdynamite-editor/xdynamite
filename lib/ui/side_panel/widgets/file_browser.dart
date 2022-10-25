@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:xdynamite/app/constants/colors.dart';
-import 'package:xdynamite/core/files/read_file.dart';
+import 'package:xdynamite/app/utils/files-io.dart';
+import 'package:xdynamite/domain/files/fileNode.dart';
 import 'package:xdynamite/domain/files/files_io.dart';
 import 'package:xdynamite/domain/filesa/open_files.dart';
 import 'package:xdynamite/ui/controls/custom_animated_text_button.dart';
 import 'package:xdynamite/ui/controls/custom_text_button.dart';
+import 'package:xdynamite/ui/side_panel/widgets/file_list.dart';
 import 'package:xdynamite/ui/side_panel/widgets/file_widget.dart';
 import 'package:xdynamite/ui/widgets/custom_icon_button.dart';
 import 'package:xdynamite/ui/widgets/spacer_y.dart';
@@ -19,7 +21,7 @@ class FileBrowser extends StatefulWidget {
 class _FileBrowserState extends State<FileBrowser> {
   bool opened = false;
 
-  List<Map<String, String>> files = [];
+  List<FileNode> files = [];
   @override
   Widget build(BuildContext context) {
     if (!opened) {
@@ -27,7 +29,7 @@ class _FileBrowserState extends State<FileBrowser> {
           width: 250,
           padding: EdgeInsets.all(10),
           child: Column(children: [
-            Text(
+            const Text(
               "Open project folder to start editing. Or you can clone a git repository.",
               style: TextStyle(fontSize: 12, color: fontClr1),
             ),
@@ -41,21 +43,12 @@ class _FileBrowserState extends State<FileBrowser> {
                   return;
                 }
 
-                var contents = await readDirectory(directoryPath);
-                await for (final value in contents) {
-                  String filename = value.uri.pathSegments.last;
-                  if (value.runtimeType.toString() == "_Directory") {
-                    filename = value.path.split("/").last;
-                  }
+                var fileNodes =
+                    await getSystemFileTreeFromFolder(directoryPath);
 
-                  files.add({
-                    "filename": filename,
-                    "path": value.path,
-                    "type": value.runtimeType.toString()
-                  });
-                }
                 setState(() {
                   opened = true;
+                  files = fileNodes;
                 });
               },
               textColor: lightColor1,
@@ -82,15 +75,16 @@ class _FileBrowserState extends State<FileBrowser> {
       child: Column(
         children: [
           TopBar(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: files
-                .map((e) => FileWidget(
-                      name: e["filename"] as String,
-                      path: e["path"] as String,
-                    ))
-                .toList(),
-          ),
+          // Column(
+          //   crossAxisAlignment: CrossAxisAlignment.start,
+          //   children: files
+          //       .map((e) => FileWidget(
+          //             name: e["filename"] as String,
+          //             path: e["path"] as String,
+          //           ))
+          //       .toList(),
+          // ),
+          Expanded(child: FileList(files)),
         ],
       ),
     );
