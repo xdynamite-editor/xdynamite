@@ -22,11 +22,6 @@ class _SearchState extends State<Search> {
               "SEARCH",
               style: TextStyle(color: fontClr1),
             ),
-            CustomTextButton(
-                text: "LSP", onTap: () {}, padding: EdgeInsets.all(0)),
-            SpacerY(10),
-            CustomTextButton(
-                text: "LSP INIT", onTap: () {}, padding: EdgeInsets.all(0)),
             SpacerY(10),
             Text(
               "Work in Progress",
