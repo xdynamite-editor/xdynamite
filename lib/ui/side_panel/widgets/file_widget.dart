@@ -48,13 +48,11 @@ class _FileWidgetState extends State<FileWidget> {
                 .read<FilesBloc>()
                 .add(OpenFile({"name": widget.name, "path": widget.path}));
           },
-          child: AnimatedContainer(
+          child: Container(
               decoration: BoxDecoration(
                 color: isHovered ? lightColor4 : lightColor3,
                 borderRadius: BorderRadius.all(Radius.circular(3)),
               ),
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.fastOutSlowIn,
               child: Container(
                 padding:
                     EdgeInsets.fromLTRB(widget.isDirectory ? 6 : 23, 4, 3, 4),
