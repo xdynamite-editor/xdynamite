@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:xdynamite/app/constants/colors.dart';
 import 'package:xdynamite/domain/files/files_bloc.dart';
 import 'package:xdynamite/domain/files/files_io.dart';
-import 'package:xdynamite/domain/lsp/cpp.lsp.dart';
 
 class TextEditor extends StatefulWidget {
   TextEditor({Key? key}) : super(key: key);
@@ -27,9 +26,7 @@ class _TextEditorState extends State<TextEditor> {
               keyboardType: TextInputType.multiline,
               cursorColor: primaryAccentColor,
               maxLines: null,
-              onChanged: (v) {
-                var newText = CppLSP.getInfo(v);
-              },
+              onChanged: (v) {},
               style: TextStyle(
                   color: fontClr1,
                   fontWeight: FontWeight.w500,
