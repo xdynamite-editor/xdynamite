@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:xdynamite/app/constants/colors.dart';
-import 'package:xdynamite/domain/bloc/action_bar_bloc.dart';
+import 'package:xdynamite/domain/action_bar/action_bar_bloc.dart';
 import 'package:xdynamite/ui/action_bar/widgets/command_text_input.dart';
 import 'package:xdynamite/ui/widgets/custom_icon_button.dart';
 import 'package:xdynamite/ui/widgets/spacer_x.dart';
-import 'package:provider/provider.dart';
 
 class ActionBar extends StatelessWidget {
   const ActionBar({Key? key}) : super(key: key);
