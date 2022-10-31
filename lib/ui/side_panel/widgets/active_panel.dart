@@ -29,17 +29,20 @@ class ActivePanel extends StatelessWidget {
 class TopBar extends StatelessWidget {
   const TopBar({Key? key}) : super(key: key);
 
+  final _panelTitles = const ["FILE BROWSER", "SEARCH", "SETTINGS"];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 250,
-      color: lightColor6,
-      padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-      child: Text(
-        "my-portfolio".toUpperCase(),
-        style: const TextStyle(
-            fontWeight: FontWeight.w900, color: fontClr1, fontSize: 12),
-      ),
-    );
+    return BlocBuilder<SidePanelBloc, SidePanelState>(builder: (ctx, state) {
+      return Container(
+          width: 250,
+          color: lightColor6,
+          padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+          child: Text(
+            _panelTitles[state.position],
+            style: const TextStyle(
+                fontWeight: FontWeight.w900, color: fontClr1, fontSize: 12),
+          ));
+    });
   }
 }
