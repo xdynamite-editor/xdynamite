@@ -1,6 +1,4 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:xdynamite/app/constants/colors.dart';
@@ -19,8 +17,29 @@ class ActivePanel extends StatelessWidget {
     return BlocBuilder<SidePanelBloc, SidePanelState>(builder: (ctx, state) {
       return Container(
         color: lightColor3,
-        child: _panelList[state.position],
+        child: Column(
+          children: [const TopBar(), _panelList[state.position]],
+        ),
       );
     });
+  }
+}
+//
+
+class TopBar extends StatelessWidget {
+  const TopBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 250,
+      color: lightColor6,
+      padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+      child: Text(
+        "my-portfolio".toUpperCase(),
+        style: const TextStyle(
+            fontWeight: FontWeight.w900, color: fontClr1, fontSize: 12),
+      ),
+    );
   }
 }
