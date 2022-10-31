@@ -26,7 +26,6 @@ class _FileBrowserState extends State<FileBrowser> {
   Widget build(BuildContext context) {
     if (!opened) {
       return Container(
-          width: 250,
           padding: EdgeInsets.all(10),
           child: Column(children: [
             const Text(

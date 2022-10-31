@@ -16,42 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SidePanelEvent {
-  int get position => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(double width) setSidePanelWidth,
     required TResult Function(int position) select,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double width)? setSidePanelWidth,
     TResult? Function(int position)? select,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double width)? setSidePanelWidth,
     TResult Function(int position)? select,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SetSidePanelWidth value) setSidePanelWidth,
     required TResult Function(Select value) select,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SetSidePanelWidth value)? setSidePanelWidth,
     TResult? Function(Select value)? select,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SetSidePanelWidth value)? setSidePanelWidth,
     TResult Function(Select value)? select,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SidePanelEventCopyWith<SidePanelEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +61,6 @@ abstract class $SidePanelEventCopyWith<$Res> {
   factory $SidePanelEventCopyWith(
           SidePanelEvent value, $Res Function(SidePanelEvent) then) =
       _$SidePanelEventCopyWithImpl<$Res, SidePanelEvent>;
-  @useResult
-  $Res call({int position});
 }
 
 /// @nodoc
@@ -73,27 +72,155 @@ class _$SidePanelEventCopyWithImpl<$Res, $Val extends SidePanelEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$SetSidePanelWidthCopyWith<$Res> {
+  factory _$$SetSidePanelWidthCopyWith(
+          _$SetSidePanelWidth value, $Res Function(_$SetSidePanelWidth) then) =
+      __$$SetSidePanelWidthCopyWithImpl<$Res>;
+  @useResult
+  $Res call({double width});
+}
+
+/// @nodoc
+class __$$SetSidePanelWidthCopyWithImpl<$Res>
+    extends _$SidePanelEventCopyWithImpl<$Res, _$SetSidePanelWidth>
+    implements _$$SetSidePanelWidthCopyWith<$Res> {
+  __$$SetSidePanelWidthCopyWithImpl(
+      _$SetSidePanelWidth _value, $Res Function(_$SetSidePanelWidth) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? position = null,
+    Object? width = null,
   }) {
-    return _then(_value.copyWith(
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+    return _then(_$SetSidePanelWidth(
+      null == width
+          ? _value.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
   }
 }
 
 /// @nodoc
-abstract class _$$SelectCopyWith<$Res>
-    implements $SidePanelEventCopyWith<$Res> {
+
+class _$SetSidePanelWidth
+    with DiagnosticableTreeMixin
+    implements SetSidePanelWidth {
+  const _$SetSidePanelWidth(this.width);
+
+  @override
+  final double width;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SidePanelEvent.setSidePanelWidth(width: $width)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SidePanelEvent.setSidePanelWidth'))
+      ..add(DiagnosticsProperty('width', width));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetSidePanelWidth &&
+            (identical(other.width, width) || other.width == width));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, width);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetSidePanelWidthCopyWith<_$SetSidePanelWidth> get copyWith =>
+      __$$SetSidePanelWidthCopyWithImpl<_$SetSidePanelWidth>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(double width) setSidePanelWidth,
+    required TResult Function(int position) select,
+  }) {
+    return setSidePanelWidth(width);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double width)? setSidePanelWidth,
+    TResult? Function(int position)? select,
+  }) {
+    return setSidePanelWidth?.call(width);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double width)? setSidePanelWidth,
+    TResult Function(int position)? select,
+    required TResult orElse(),
+  }) {
+    if (setSidePanelWidth != null) {
+      return setSidePanelWidth(width);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SetSidePanelWidth value) setSidePanelWidth,
+    required TResult Function(Select value) select,
+  }) {
+    return setSidePanelWidth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SetSidePanelWidth value)? setSidePanelWidth,
+    TResult? Function(Select value)? select,
+  }) {
+    return setSidePanelWidth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SetSidePanelWidth value)? setSidePanelWidth,
+    TResult Function(Select value)? select,
+    required TResult orElse(),
+  }) {
+    if (setSidePanelWidth != null) {
+      return setSidePanelWidth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetSidePanelWidth implements SidePanelEvent {
+  const factory SetSidePanelWidth(final double width) = _$SetSidePanelWidth;
+
+  double get width;
+  @JsonKey(ignore: true)
+  _$$SetSidePanelWidthCopyWith<_$SetSidePanelWidth> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectCopyWith<$Res> {
   factory _$$SelectCopyWith(_$Select value, $Res Function(_$Select) then) =
       __$$SelectCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({int position});
 }
@@ -121,15 +248,23 @@ class __$$SelectCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Select implements Select {
+class _$Select with DiagnosticableTreeMixin implements Select {
   const _$Select(this.position);
 
   @override
   final int position;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SidePanelEvent.select(position: $position)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SidePanelEvent.select'))
+      ..add(DiagnosticsProperty('position', position));
   }
 
   @override
@@ -153,6 +288,7 @@ class _$Select implements Select {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(double width) setSidePanelWidth,
     required TResult Function(int position) select,
   }) {
     return select(position);
@@ -161,6 +297,7 @@ class _$Select implements Select {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(double width)? setSidePanelWidth,
     TResult? Function(int position)? select,
   }) {
     return select?.call(position);
@@ -169,6 +306,7 @@ class _$Select implements Select {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(double width)? setSidePanelWidth,
     TResult Function(int position)? select,
     required TResult orElse(),
   }) {
@@ -181,6 +319,7 @@ class _$Select implements Select {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SetSidePanelWidth value) setSidePanelWidth,
     required TResult Function(Select value) select,
   }) {
     return select(this);
@@ -189,6 +328,7 @@ class _$Select implements Select {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SetSidePanelWidth value)? setSidePanelWidth,
     TResult? Function(Select value)? select,
   }) {
     return select?.call(this);
@@ -197,6 +337,7 @@ class _$Select implements Select {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SetSidePanelWidth value)? setSidePanelWidth,
     TResult Function(Select value)? select,
     required TResult orElse(),
   }) {
@@ -210,9 +351,7 @@ class _$Select implements Select {
 abstract class Select implements SidePanelEvent {
   const factory Select(final int position) = _$Select;
 
-  @override
   int get position;
-  @override
   @JsonKey(ignore: true)
   _$$SelectCopyWith<_$Select> get copyWith =>
       throw _privateConstructorUsedError;
@@ -221,6 +360,7 @@ abstract class Select implements SidePanelEvent {
 /// @nodoc
 mixin _$SidePanelState {
   int get position => throw _privateConstructorUsedError;
+  double get sidePanelWidth => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SidePanelStateCopyWith<SidePanelState> get copyWith =>
@@ -233,7 +373,7 @@ abstract class $SidePanelStateCopyWith<$Res> {
           SidePanelState value, $Res Function(SidePanelState) then) =
       _$SidePanelStateCopyWithImpl<$Res, SidePanelState>;
   @useResult
-  $Res call({int position});
+  $Res call({int position, double sidePanelWidth});
 }
 
 /// @nodoc
@@ -250,12 +390,17 @@ class _$SidePanelStateCopyWithImpl<$Res, $Val extends SidePanelState>
   @override
   $Res call({
     Object? position = null,
+    Object? sidePanelWidth = null,
   }) {
     return _then(_value.copyWith(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
+      sidePanelWidth: null == sidePanelWidth
+          ? _value.sidePanelWidth
+          : sidePanelWidth // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -268,7 +413,7 @@ abstract class _$$_SidePanelStateCopyWith<$Res>
       __$$_SidePanelStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int position});
+  $Res call({int position, double sidePanelWidth});
 }
 
 /// @nodoc
@@ -283,27 +428,46 @@ class __$$_SidePanelStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? position = null,
+    Object? sidePanelWidth = null,
   }) {
     return _then(_$_SidePanelState(
       position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
+      sidePanelWidth: null == sidePanelWidth
+          ? _value.sidePanelWidth
+          : sidePanelWidth // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SidePanelState implements _SidePanelState {
-  const _$_SidePanelState({required this.position});
+class _$_SidePanelState
+    with DiagnosticableTreeMixin
+    implements _SidePanelState {
+  const _$_SidePanelState(
+      {required this.position, required this.sidePanelWidth});
 
   @override
   final int position;
+  @override
+  final double sidePanelWidth;
 
   @override
-  String toString() {
-    return 'SidePanelState(position: $position)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SidePanelState(position: $position, sidePanelWidth: $sidePanelWidth)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SidePanelState'))
+      ..add(DiagnosticsProperty('position', position))
+      ..add(DiagnosticsProperty('sidePanelWidth', sidePanelWidth));
   }
 
   @override
@@ -312,11 +476,13 @@ class _$_SidePanelState implements _SidePanelState {
         (other.runtimeType == runtimeType &&
             other is _$_SidePanelState &&
             (identical(other.position, position) ||
-                other.position == position));
+                other.position == position) &&
+            (identical(other.sidePanelWidth, sidePanelWidth) ||
+                other.sidePanelWidth == sidePanelWidth));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, position);
+  int get hashCode => Object.hash(runtimeType, position, sidePanelWidth);
 
   @JsonKey(ignore: true)
   @override
@@ -326,11 +492,14 @@ class _$_SidePanelState implements _SidePanelState {
 }
 
 abstract class _SidePanelState implements SidePanelState {
-  const factory _SidePanelState({required final int position}) =
-      _$_SidePanelState;
+  const factory _SidePanelState(
+      {required final int position,
+      required final double sidePanelWidth}) = _$_SidePanelState;
 
   @override
   int get position;
+  @override
+  double get sidePanelWidth;
   @override
   @JsonKey(ignore: true)
   _$$_SidePanelStateCopyWith<_$_SidePanelState> get copyWith =>

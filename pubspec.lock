@@ -560,6 +560,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  resizable_widget:
+    dependency: "direct main"
+    description:
+      name: resizable_widget
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.5"
   scroll_pos:
     dependency: transitive
     description:

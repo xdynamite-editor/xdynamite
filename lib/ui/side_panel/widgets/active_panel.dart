@@ -15,11 +15,8 @@ class ActivePanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SidePanelBloc, SidePanelState>(builder: (ctx, state) {
-      return Container(
-        color: lightColor3,
-        child: Column(
-          children: [const TopBar(), _panelList[state.position]],
-        ),
+      return Column(
+        children: [TopBar(), _panelList[state.position]],
       );
     });
   }
@@ -35,13 +32,16 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SidePanelBloc, SidePanelState>(builder: (ctx, state) {
       return Container(
-          width: 250,
           color: lightColor6,
           padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-          child: Text(
-            _panelTitles[state.position],
-            style: const TextStyle(
-                fontWeight: FontWeight.w900, color: fontClr1, fontSize: 12),
+          child: Row(
+            children: [
+              Text(
+                _panelTitles[state.position],
+                style: const TextStyle(
+                    fontWeight: FontWeight.w900, color: fontClr1, fontSize: 12),
+              ),
+            ],
           ));
     });
   }

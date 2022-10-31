@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,6 +12,10 @@ class SidePanelBloc extends Bloc<SidePanelEvent, SidePanelState> {
     on<Select>((event, emit) {
       // TODO: implement event handler
       emit(state.copyWith(position: event.position));
+    });
+
+    on<SetSidePanelWidth>((event, emit) {
+      emit(state.copyWith(sidePanelWidth: event.width));
     });
   }
 }
